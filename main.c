@@ -2,5 +2,7 @@
 
 void main()
 {
-    printf("github test");
+    printf("github test\n");
+    printf("github test2");
+    
 }
