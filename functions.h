@@ -5,5 +5,6 @@
 
 int FindColon(DubList *pl);
 int Difference(DubList *pl);
+int isFoundInRight(DubList *pl);
 
 #endif // FUNCTIONS_H_INCLUDED
