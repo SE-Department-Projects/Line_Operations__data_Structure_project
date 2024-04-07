@@ -35,19 +35,19 @@ void InsertList(DubList *pl, ListEntry e, int pos)
     pn->next = NULL;
     pn->prev = NULL;
 
-    if(!pl->tail){ // if the list is empty 
+    if(!pl->tail){ // if the list is empty
         pl->head = pn; // head point to pn
         pl->tail = pn; // tail point to pn
     }
     else{ // list not empty
         pl->current = pl->head; // the current points to first element
         if(pos == 0){ // if the insertion in first pos
-            pn->next = pl->current; 
+            pn->next = pl->current;
             pl->current->prev = pn;
             pl->head = pn;
         }
         else{ // if insertion is not in first pos
-            for(i = 0; i < pos-1; i++){ 
+            for(i = 0; i < pos-1; i++){
                 pl->current = pl->current->next; // make the current point to the one node before the insertion
                 pl->currentPos++;
             }
@@ -56,7 +56,7 @@ void InsertList(DubList *pl, ListEntry e, int pos)
             pl->current->next = pn;
             if(pos == pl->size) // if the insertion is at the end
                 pl->tail = pn; // tail points to the new node
-            else 
+            else
                 pn->next->prev = pn;
         }
     }
@@ -91,5 +91,3 @@ void TraverseListOpp(DubList *pl, void (*pf)(ListEntry)){ // not used
         pn = pn->prev;
     }
 }
-
-

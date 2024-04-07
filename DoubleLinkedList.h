@@ -1,6 +1,7 @@
 #ifndef DOUBLELINKEDLIST_H_INCLUDED
 #define DOUBLELINKEDLIST_H_INCLUDED
 
+
 typedef char ListEntry;
 
 typedef struct listnode{
@@ -12,7 +13,7 @@ typedef struct listnode{
 typedef struct{
 
     ListNode *current,*head,*tail;
-    
+
     int currentPos,size;
 }DubList;
 
@@ -23,6 +24,6 @@ int ListSize(DubList *pl);
 void InsertList(DubList *pl, ListEntry e, int pos);
 void DestroyList(DubList *pl);
 void TraverseList(DubList *pl, void (*pf)(ListEntry));
-void TraverseListOpp(DubList *pl, void (*pf)(ListEntry));
+void TraverseListOpp(DubList *pl, void (
 
-#endif 
+#endif // DOUBLELINKEDLIST_H_INCLUDED
