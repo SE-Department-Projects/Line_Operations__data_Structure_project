@@ -51,9 +51,9 @@ void main(){
 
             else // right == left
             {
-                if(IsIdentical(&l))
+                if(isIdentical(&l))
                     printf("S");
-                else if(IsMirror(&l))
+                if(isMirror(&l))
                     printf("M");
                 else
                     printf("D");

@@ -68,6 +68,20 @@ int isFoundInRight(DubList *pl)
     return 1;
 }
 
+int isIdentical (DubList *pl)
+{
+    ListNode *right = pl->head;
+    ListNode *left = pl->current->next;
+
+    while(right->entry != ':' && left != NULL)
+    {
+        if(right->entry != left->entry) // compare characters from right of : with those from left
+            return 0; // found that characters are not identical
+        right = right->next;
+        left = left->next;
+    }
+    return 1; // found both sides to be identical
+}
 
 int isMirror(DubList *pl)
 {
@@ -98,17 +112,4 @@ int isMirror(DubList *pl)
     return 1; // It's a mirror
 }
 
-int isIdentical (DubList *pl)
-{
-    ListNode *right = pl->head;
-    ListNode *left = pl->current->next;
 
-    while(right->entry != ':' && left != NULL)
-    {
-        if(right->entry != left->entry) // compare characters from right of : with those from left
-            return 0; // found that characters are not identical
-        right = right->next;
-        left = left->next;
-    }
-    return 1; // found both sides to be identical
-}

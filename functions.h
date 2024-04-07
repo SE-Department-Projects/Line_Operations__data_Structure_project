@@ -5,6 +5,7 @@
 int FindColon(DubList *pl);
 int Difference(DubList *pl);
 int isFoundInRight(DubList *pl);
-int isMirror(DubList *pl);
 int isIdentical (DubList *pl);
+int isMirror(DubList *pl);
+
 #endif // FUNCTIONS_H_INCLUDED
