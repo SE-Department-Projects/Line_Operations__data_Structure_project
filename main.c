@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "functions.h"
+#include "DoubleLinkedList.h"
 
 
 void main(){
@@ -22,6 +22,11 @@ void main(){
 
         if(option == 2)
             break;
+        
+        if(option != 1){
+            printf("Enter a valid answer\n");
+            continue;
+        }
 
         printf("Enter text: ");
         scanf("%s",&arr);
@@ -44,17 +49,22 @@ void main(){
 
             else if (diff < 0) // right > left
             {
-                // IsPartOfRight(&l)
-                // IsFoundInRight(&l)
-                // else printf("R");
+                if(IsPartOfRight(&l))
+                    printf("P");
+                else if(IsFoundInRight(&l))
+                    printf("Q");
+                else
+                    printf("R");
             }
 
             else // right == left
             {
-                if(isIdentical(&l))
-                    printf("S");
-                if(isMirror(&l))
-                    printf("M");
+                if(IsIdentical(&l) || IsMirror(&l)){
+                    if(IsIdentical(&l))
+                        printf("S\n");
+                    if(IsMirror(&l))
+                        printf("M");
+                }
                 else
                     printf("D");
             }

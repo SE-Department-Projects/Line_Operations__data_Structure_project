@@ -26,4 +26,15 @@ void TraverseList(DubList *pl, void (*pf)(ListEntry));
 void TraverseListOpp(DubList *pl, void (*pf)(ListEntry));
 
 
+
+//Methods
+
+int FindColon(DubList *pl);
+int Difference(DubList *pl);
+int IsPartOfRight(DubList *pl);
+int IsFoundInRight(DubList *pl);
+int IsIdentical (DubList *pl);
+int IsMirror(DubList *pl);
+
+
 #endif // DOUBLELINKEDLIST_H_INCLUDED
