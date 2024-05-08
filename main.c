@@ -18,7 +18,7 @@ int main() {
         option = input - '0';
 
         if (option != 1 && option != 2) {
-            printf("Enter a valid option (1 or 2)\n");
+            printf("\nEnter a valid option\n");
             while (getchar() != '\n');
             continue;
         }
@@ -30,8 +30,8 @@ int main() {
             CreateList(&l);
 
             for(int i = 0; arr[i] != '\0' ; i++){
-            InsertList(&l,arr[i],i);
-        }
+                InsertList(&l,arr[i],i);
+            }
 
             if (!FindColon(&l))
                 printf("N");
@@ -41,21 +41,22 @@ int main() {
                 if (diff > 0) //left > right
                 {
                     printf("L");
-                } else if (diff < 0) // right > left
+                } 
+                else if (diff < 0) // right > left
                 {
+                    printf("R\n");
                     if (IsPartOfRight(&l))
-                        printf("P");
-                    else if (IsFoundInRight(&l))
-                        printf("Q");
-                    else
-                        printf("R");
-                } else // right == left
+                        printf("P\n");
+                    if (IsFoundInRight(&l)) // TODO: fix
+                        printf("Q\n");
+                }
+                else // right == left
                 {
                     if (IsIdentical(&l) || IsMirror(&l)) {
                         if (IsIdentical(&l))
                             printf("S\n");
                         if (IsMirror(&l))
-                            printf("M");
+                            printf("M\n");
                     } else
                         printf("D");
                 }
