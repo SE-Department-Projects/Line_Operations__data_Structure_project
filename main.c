@@ -1,53 +1,58 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "DoubleLinkedList.h"
+#include "DoubleLinkedList.c"
+
+int ValidateInput(char arr[]);
+int MainMenu();
+
+
 
 int main() {
+
+
     DubList l;
     ListEntry arr[500];
     int option = 0;
     int diff;
 
     while (option != 2) {
-        printf("\n1=> Enter text\n");
-        printf("2=> Exit\n");
-        printf("answer: ");
 
-        char input;
-        scanf(" %c", &input);
-        option = input - '0';
+
+        option = MainMenu();
+                
 
         if (option != 1 && option != 2) {
             printf("\nEnter a valid option\n");
-            while (getchar() != '\n');
             continue;
         }
 
         if (option == 1) {
             printf("Enter text: ");
-            scanf("%s", arr);
+            
+            gets(arr);
 
             CreateList(&l);
 
             for(int i = 0; arr[i] != '\0' ; i++){
                 InsertList(&l,arr[i],i);
+                // printf("%c\n",arr[i]);
             }
 
             if (!FindColon(&l))
-                printf("N");
+                printf("N\n");
             else {
                 diff = Difference(&l);
 
                 if (diff > 0) //left > right
                 {
-                    printf("L");
-                } 
+                    printf("L\n");
+                }
                 else if (diff < 0) // right > left
                 {
                     printf("R\n");
                     if (IsPartOfRight(&l))
                         printf("P\n");
-                    if (IsFoundInRight(&l)) // TODO: fix
+                    else if (IsFoundInRight(&l))
                         printf("Q\n");
                 }
                 else // right == left
@@ -58,7 +63,7 @@ int main() {
                         if (IsMirror(&l))
                             printf("M\n");
                     } else
-                        printf("D");
+                        printf("D\n");
                 }
             }
             DestroyList(&l);
@@ -66,4 +71,28 @@ int main() {
     }
 
     return 0; // Exit the program
+}
+
+int ValidateInput(char arr[]){
+
+    if((arr[0] == '1' || arr[0] == '2') && arr[1] == '\0'){
+        return 1;
+    }
+    return 0;
+}
+
+
+
+int MainMenu(){
+        printf("\nSelect an Option\n");
+        printf("1=> Enter text\n");
+        printf("2=> Exit\n");
+        printf("answer: ");
+
+        char ans[100];
+        // int opt = ans[0];
+        gets(ans);
+        if(ValidateInput(ans))
+            return ans[0] - '0';
+        return 0;
 }
