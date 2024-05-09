@@ -1,6 +1,6 @@
 # Line Operations
 
-This project implements a program to process input lines according to specified rules. The program reads one line of input from the terminal, which is expected to consist of two parts separated by a colon ":". It then applies various comparisons to these parts and produces a single character as a result.
+This project implements a program to process input lines according to specified rules. The program reads one line of input from the terminal, which is expected to consist of two parts separated by a colon ":". It then applies various comparisons to these parts and produces a single character as a result (implemented using Double Linked List).
 
 ## Functionality
 
