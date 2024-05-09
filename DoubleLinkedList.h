@@ -3,18 +3,20 @@
 
 typedef char ListEntry;
 
-typedef struct listnode{
+typedef struct listnode
+{
 
-    struct listnode *next,*prev;
+    struct listnode *next, *prev;
     ListEntry entry;
-}ListNode;
+} ListNode;
 
-typedef struct{
+typedef struct
+{
 
-    ListNode *current,*head,*tail;
+    ListNode *current, *head, *tail;
 
-    int currentPos,size;
-}DubList;
+    int currentPos, size;
+} DubList;
 
 void CreateList(DubList *pl);
 int ListEmpty(DubList *pl);
@@ -25,16 +27,13 @@ void DestroyList(DubList *pl);
 void TraverseList(DubList *pl, void (*pf)(ListEntry));
 void TraverseListOpp(DubList *pl, void (*pf)(ListEntry));
 
-
-
-//Methods
+// Methods
 
 int FindColon(DubList *pl);
 int Difference(DubList *pl);
 int IsPartOfRight(DubList *pl);
 int IsFoundInRight(DubList *pl);
-int IsIdentical (DubList *pl);
+int IsIdentical(DubList *pl);
 int IsMirror(DubList *pl);
-
 
 #endif // DOUBLELINKEDLIST_H_INCLUDED
